@@ -8,7 +8,7 @@
 import Foundation
 
 
-/// Primary API service object to get Rick and Morty data
+/// Primary API service object to get Rick and Morty data aaa
 final class RMService{
     /// Shared Sıngleton Instance
     static let shared = RMService()
