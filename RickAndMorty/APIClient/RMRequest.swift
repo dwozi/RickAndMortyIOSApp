@@ -66,7 +66,10 @@ final class RMRequest{
         self.pathComponents = pathComponents
         self.queryParamaters = queryParamaters
     }
-    //https://rickandmortyapi.com/api/character/2
+    
+    
+    /// Attemp to create request
+    /// - Parameter url: URL to parse
     convenience init?(url : URL){
         let string = url.absoluteString
         if !string.contains(Constants.baseUrl){
@@ -76,9 +79,14 @@ final class RMRequest{
         if trimmed.contains("/"){
             let components = trimmed.components(separatedBy: "/")
             if !components.isEmpty{
-                let endPointString = components[0]
+                let endPointString = components[0] // ENDpoint
+                var pathComponents : [String] = []
+                if components.count > 1{
+                    pathComponents = components
+                    pathComponents.removeFirst()
+                }
                 if let rmEndpoint = RMEndpoint(rawValue: endPointString) {
-                    self.init(endpoint: rmEndpoint)
+                    self.init(endpoint: rmEndpoint,pathComponents: pathComponents)
                     return
                 }
             }

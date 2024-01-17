@@ -20,3 +20,9 @@ enum RMCharacterStatus :String, Codable {
         }
     }
 }
+
+
+
+
+
+
