@@ -17,10 +17,20 @@ private let characterListView = RMCharacterListView()
         view.backgroundColor = .systemBackground
         title = "Characters"
         
-            setupView()
-        
+        setupView()
+        addSearchButton()
+    }
+    
+    private func addSearchButton(){
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
+    }
+    @objc func didTapSearch(){
+        let vc = RMSearchViewController(config: RMSearchViewController.Config(type: .character))
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
         
     }
+    
     private func setupView(){
         characterListView.delegate = self
         view.addSubview(characterListView)

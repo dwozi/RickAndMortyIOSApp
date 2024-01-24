@@ -8,11 +8,11 @@
 import Foundation
 
 /// Represent unique API call
-@frozen enum RMEndpoint : String {
+@frozen enum RMEndpoint : String,CaseIterable,Hashable {
     /// Endpoint to get character info
     case character
     /// Endpoint to get location info
     case location
-    /// Endpoint to get epiode info
+    /// Endpoint to get episode info
     case episode
 }

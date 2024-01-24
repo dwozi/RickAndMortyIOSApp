@@ -26,11 +26,8 @@ final class RMCharacterInfoCollectionViewCellViewModel{
         formatter.timeZone = .current
         return formatter
     }()
-   
-    
     public var title : String{
         type.displayTitle
-        
     }
     public var displayValue : String{
         if value.isEmpty{return "None"}
