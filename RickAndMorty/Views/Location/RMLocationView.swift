@@ -13,8 +13,9 @@ final class RMLocationView: UIView {
             spinner.stopAnimating()
             tableView.isHidden = false
             tableView.reloadData()
-            tableView.alpha = 1
-            
+            RMLocationView.animate(withDuration: 0.5) {
+                self.tableView.alpha = 1
+            }
             
         }
     }
@@ -24,8 +25,7 @@ final class RMLocationView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.alpha = 0
         tableView.isHidden = true
-        
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        tableView.register(RMLocationTableViewCell.self, forCellReuseIdentifier: RMLocationTableViewCell.identifier)
     
         return tableView
     }()
@@ -46,9 +46,16 @@ final class RMLocationView: UIView {
         addSubviews(tableView,spinner)
         spinner.startAnimating()
         addConstraints()
+        configureTable()
     }
     required init?(coder: NSCoder) {
         fatalError()
+    }
+    
+    private func configureTable(){
+        tableView.delegate = self
+        tableView.dataSource = self
+        
     }
     
     private func addConstraints(){
@@ -68,5 +75,40 @@ final class RMLocationView: UIView {
     public func configure(with viewModel: RMLocationViewViewModel){
         self.viewModel = viewModel
     }
+    
+}
+extension RMLocationView : UITableViewDelegate{
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        //Notify Controller of Selection
+    }
+}
+extension RMLocationView : UITableViewDataSource{
+  
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel?.cellViewModels.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cellViewModels = viewModel?.cellViewModels else {
+            fatalError()
+        }
+        guard let cell = tableView.dequeueReusableCell(
+            withIdentifier: RMLocationTableViewCell.identifier,
+            for: indexPath
+        ) as? RMLocationTableViewCell else {
+            fatalError()
+        }
+        var content = cell.defaultContentConfiguration()
+        let cellViewModel = cellViewModels[indexPath.row]
+        
+        content.text = cellViewModel.name
+        content.secondaryText = cellViewModel.type
+        
+        
+        cell.contentConfiguration = content
+        return cell
+    }
+    
     
 }
