@@ -31,7 +31,9 @@ final class RMLocationViewController: UIViewController ,RMLocationViewViewModelD
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .search, target: self, action: #selector(didTapSearch))
     }
     @objc func didTapSearch(){
-        
+        let vc = RMSearchViewController(config: .init(type: .location))
+        vc.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     private func addConstraints(){
