@@ -20,6 +20,16 @@ final class RMSearchViewController: UIViewController {
             case character // Name | Status | Gender
             case episode// Name
             case location// Name | Type
+            
+            var endpoint : RMEndpoint {
+                switch self{
+                case .character: return .character
+                case .episode: return .episode
+                case .location: return .location
+                    
+                }
+            }
+
            
             var title : String{
                 switch self{
