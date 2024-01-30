@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		564A5D872B6574D200BA10E3 /* RMSearchOptionPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A5D862B6574D200BA10E3 /* RMSearchOptionPickerViewController.swift */; };
 		564A5D8A2B6859F500BA10E3 /* RMSearchResultViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A5D892B6859F500BA10E3 /* RMSearchResultViewModel.swift */; };
+		564A5D8C2B686DA300BA10E3 /* RMSearchResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 564A5D8B2B686DA300BA10E3 /* RMSearchResultsView.swift */; };
 		56DD04742B584BB900C5BBBC /* RMEpisodeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD04732B584BB900C5BBBC /* RMEpisodeDetailViewController.swift */; };
 		56DD04762B5860DC00C5BBBC /* RMAPICacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD04752B5860DC00C5BBBC /* RMAPICacheManager.swift */; };
 		56DD04782B586E3600C5BBBC /* RMEpisodeDetailViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DD04772B586E3600C5BBBC /* RMEpisodeDetailViewViewModel.swift */; };
@@ -78,6 +79,7 @@
 /* Begin PBXFileReference section */
 		564A5D862B6574D200BA10E3 /* RMSearchOptionPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchOptionPickerViewController.swift; sourceTree = "<group>"; };
 		564A5D892B6859F500BA10E3 /* RMSearchResultViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultViewModel.swift; sourceTree = "<group>"; };
+		564A5D8B2B686DA300BA10E3 /* RMSearchResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMSearchResultsView.swift; sourceTree = "<group>"; };
 		56DD04732B584BB900C5BBBC /* RMEpisodeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailViewController.swift; sourceTree = "<group>"; };
 		56DD04752B5860DC00C5BBBC /* RMAPICacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMAPICacheManager.swift; sourceTree = "<group>"; };
 		56DD04772B586E3600C5BBBC /* RMEpisodeDetailViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RMEpisodeDetailViewViewModel.swift; sourceTree = "<group>"; };
@@ -432,6 +434,7 @@
 				56FA74D72B62B10A004CBE2F /* RMSearchView.swift */,
 				56FA74DC2B62B3EB004CBE2F /* RMNoSearchResultsView.swift */,
 				56FA74E02B62B461004CBE2F /* RMSearchInputView.swift */,
+				564A5D8B2B686DA300BA10E3 /* RMSearchResultsView.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -526,6 +529,7 @@
 				56FA74DF2B62B426004CBE2F /* RMNoSearchResultsViewViewModel.swift in Sources */,
 				56ECCAB12B4C34BC00E963B2 /* RMCharacterStatus.swift in Sources */,
 				56ECCAB32B4C353A00E963B2 /* RMCharacterGender.swift in Sources */,
+				564A5D8C2B686DA300BA10E3 /* RMSearchResultsView.swift in Sources */,
 				56ECCA9A2B4B123100E963B2 /* RMLocationViewController.swift in Sources */,
 				56FA74D52B62A2D9004CBE2F /* RMLocationDetailViewViewModel.swift in Sources */,
 				56ECCAC42B51D09400E963B2 /* RMCharacterDetailViewController.swift in Sources */,
