@@ -55,10 +55,9 @@ final class RMSearchView: UIView {
         viewModel.registerOptionChangeBlock {tuple in
             self.searchInputView.update(option: tuple.0, value: tuple.1)
         }
-        viewModel.registerSearchResultHandler { [weak self] results in
-           
+        viewModel.registerSearchResultHandler { [weak self] result in
             DispatchQueue.main.async{
-                self?.resultsView.configure(with: results)
+                self?.resultsView.configure(with: result)
                 self?.noResultsView.isHidden = true
                 self?.resultsView.isHidden = false
             }
@@ -147,3 +146,5 @@ extension RMSearchView : RMSearchResultsViewDelegate{
         delegate?.rmSearchView(self, didSelectLocation: locationModel)
     }
 }
+
+
